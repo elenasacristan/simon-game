@@ -6,6 +6,15 @@ let userClickedPattern = [];
 let started = false;
 let level = 0;
 
+//code for mobile devices
+window.addEventListener("touchstart", function () {
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+});
+
 $(document).on("keydown", function () {
   if (!started) {
     $("#level-title").text("Level " + level);
